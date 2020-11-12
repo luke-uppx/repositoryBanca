@@ -7,16 +7,26 @@ public class Persona {
 	private String nome;
 	private String cognome;
 	private int idCliente;
+	private String dataNascita;
 	
 	
 	public Persona() {}
 
-	public Persona(String cf, String nome, String cognome, int idCliente) {
+	public Persona(String cf, String nome, String cognome, int idCliente, String dataNascita ) {
 		super();
 		this.cf = cf;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.idCliente = idCliente;
+		this.dataNascita=dataNascita;
+	}
+	
+	public Persona(String cf, String nome, String cognome, String dataNascita ) {
+		super();
+		this.cf = cf;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.dataNascita=dataNascita;
 	}
 
 	public String getCf() {
@@ -51,10 +61,21 @@ public class Persona {
 		this.idCliente = idCliente;
 	}
 
+	public String getDataNascita() {
+		return dataNascita;
+	}
+
+	public void setDataNascita(String dataNascita) {
+		this.dataNascita = dataNascita;
+	}
+
 	@Override
 	public String toString() {
-		return "Persona [cf=" + cf + ", nome=" + nome + ", cognome=" + cognome + ", idCliente=" + idCliente + "]";
+		return "Persona [cf=" + cf + ", nome=" + nome + ", cognome=" + cognome + ", idCliente=" + idCliente
+				+ ", dataNascita=" + dataNascita + "]";
 	}
+
+	
 	
 
 }
