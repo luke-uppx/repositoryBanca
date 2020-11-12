@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import it.begear.Banca.entity.Conto;
 
-public class ContoDAOImpl implements ContoDAO {
+public class ContoDAOImpl implements daoConto {
 
 	private static ContoDAOImpl instance;
 	private ContoDAOImpl() {}
