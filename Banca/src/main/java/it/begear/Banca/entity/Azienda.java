@@ -4,12 +4,9 @@ public class Azienda extends Cliente{
 	
 	private String pIVA;
 	private String ragioneSociale;
-	private int idClienete;
+	private int idCliente;
 	
 	
-
-
-
 	public String getpIVA() {
 		return pIVA;
 	}
@@ -30,18 +27,18 @@ public class Azienda extends Cliente{
 	}
 
 
-	public int getIdClienete() {
-		return idClienete;
+	public int getidCliente() {
+		return idCliente;
 	}
 
 
-	public void setIdClienete(int idClienete) {
-		this.idClienete = idClienete;
+	public void setidCliente(int idCliente) {
+		this.idCliente = idCliente;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Azienda [pIVA=" + pIVA + ", ragioneSociale=" + ragioneSociale + ", idClienete=" + idClienete + "]";
+		return "Azienda [pIVA=" + pIVA + ", ragioneSociale=" + ragioneSociale + ", idCliente=" + idCliente + "]";
 	}
 }
