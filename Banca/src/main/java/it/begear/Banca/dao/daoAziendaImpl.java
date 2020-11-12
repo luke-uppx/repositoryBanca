@@ -83,12 +83,4 @@ public class daoAziendaImpl implements daoAzienda{
 			return list;
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
