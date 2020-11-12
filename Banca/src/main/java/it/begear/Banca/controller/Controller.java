@@ -7,7 +7,7 @@ import it.begear.Banca.entity.Persona;
 public class Controller {
 
 	public static void main(String[] args) {
-<<<<<<< HEAD
+
 
 		
 		
@@ -15,10 +15,7 @@ public class Controller {
 		daoPersona daoPersona = daoPersonaImpl.getInstance();
 		daoPersona.createPersona(persona);
 	
-=======
-		
-		System.out.println("aaa");
->>>>>>> branchMichele
+
 	}
 
 }
