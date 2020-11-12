@@ -33,10 +33,8 @@ public class Cliente  {
 	}
 
 	public Cliente() {
-<<<<<<< HEAD
-		
-=======
->>>>>>> 3ef6ce5e5ad596aeeacfd7b1876f2b4c01c3c045
+
 	}
+
 
 }
