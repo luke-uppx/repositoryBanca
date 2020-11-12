@@ -2,32 +2,21 @@ package it.begear.Banca.entity;
 
 public class Azienda extends Cliente{
 	
-	private String idIVA;
+	private String pIVA;
 	private String ragioneSociale;
 	private int idClienete;
 	
 	
-	public Azienda() {
-		super();
-		// TODO Auto-generated constructor stub
+
+
+
+	public String getpIVA() {
+		return pIVA;
 	}
 
 
-	public Azienda(String idIVA, String ragioneSociale, int idClienete) {
-		super();
-		this.idIVA = idIVA;
-		this.ragioneSociale = ragioneSociale;
-		this.idClienete = idClienete;
-	}
-
-
-	public String getIdIVA() {
-		return idIVA;
-	}
-
-
-	public void setIdIVA(String idIVA) {
-		this.idIVA = idIVA;
+	public void setpIVA(String pIVA) {
+		this.pIVA = pIVA;
 	}
 
 
@@ -53,6 +42,6 @@ public class Azienda extends Cliente{
 
 	@Override
 	public String toString() {
-		return "Azienda [idIVA=" + idIVA + ", ragioneSociale=" + ragioneSociale + ", idClienete=" + idClienete + "]";
+		return "Azienda [pIVA=" + pIVA + ", ragioneSociale=" + ragioneSociale + ", idClienete=" + idClienete + "]";
 	}
 }
