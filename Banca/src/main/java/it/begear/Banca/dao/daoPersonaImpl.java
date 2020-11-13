@@ -67,6 +67,9 @@ public class daoPersonaImpl implements daoPersona {
 		}
 		return list;
 	}
+	
+	
+	
 
 	@Override
 	public Persona readPersona(String cf) {

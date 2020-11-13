@@ -43,18 +43,18 @@ public class daoAziendaImpl implements daoAzienda{
 	}
 		
 	@Override
-	public Azienda readAzienda(int id) {
+	public Azienda readAzienda(String pIVA) {
 		String sql="SELECT * FROM azienda WHERE pIVA=?";
 		Azienda azienda=null;
 		try(PreparedStatement stm= ConnectionManager.getConnection().prepareStatement(sql)) {
 			azienda=new Azienda();
-			stm.setInt(1, id);
+			stm.setString(1, pIVA);
 			ResultSet result=stm.executeQuery();
 			
 			while(result.next()) {
 				azienda.setpIVA(result.getString("pIVA"));
 				azienda.setRagioneSociale(result.getString("ragioneSociale"));
-				azienda.setidCliente(result.getInt("idCliente"));
+				azienda.setIdCliente(result.getInt("idCliente"));
 			}
 		}catch (SQLException e) {
 			e.printStackTrace();
@@ -75,9 +75,9 @@ public class daoAziendaImpl implements daoAzienda{
 				azienda=new Azienda();
 				ResultSet result=stm.executeQuery();
 				while(result.next()) {
-					azienda.setpIVA(result.getString("id"));
+					azienda.setpIVA(result.getString("pIVA"));
 					azienda.setRagioneSociale(result.getString("ragioneSociale"));
-					azienda.setidCliente(result.getInt("idCliente"));
+					azienda.setIdCliente(result.getInt("idCliente"));
 					list.add(azienda);
 				}
 			}catch (SQLException e) {

@@ -14,6 +14,13 @@ public class Azienda {
 		this.ragioneSociale = ragioneSociale;
 		this.idCliente = idCliente;
 	}
+	
+	public Azienda(String pIVA, String ragioneSociale) {
+		super();
+		this.pIVA = pIVA;
+		this.ragioneSociale = ragioneSociale;
+	}
+
 
 	public String getpIVA() {
 		return pIVA;
@@ -34,12 +41,12 @@ public class Azienda {
 		this.ragioneSociale = ragioneSociale;
 	}
 
-	public int getidCliente() {
+	public int getIdCliente() {
 		return idCliente;
 	}
 
 
-	public void setidCliente(int idCliente) {
+	public void setIdCliente(int idCliente) {
 		this.idCliente = idCliente;
 	}
 

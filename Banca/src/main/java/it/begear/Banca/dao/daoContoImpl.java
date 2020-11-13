@@ -32,14 +32,14 @@ public class daoContoImpl implements daoConto {
 
 	@Override
 	public Conto readConto(int idConto) {
-		String sql = "SELECT * FROM conto WHERE idConto=?";
+		String sql = "SELECT * FROM conto WHERE idCliente=?";
 		Conto conto = null;
 		try (PreparedStatement stm = ConnectionManager.getConnection().prepareStatement(sql)) {
 			conto = new Conto();
 			stm.setInt(1,idConto);
 			ResultSet result = stm.executeQuery();
 			while (result.next()) {
-				conto.setIdConto(result.getInt("id"));
+				conto.setIdConto(result.getInt("idConto"));
 				conto.setDataApertura(result.getString("dataApertura"));
 				conto.setSaldo(result.getInt("saldo"));
 				conto.setIdCliente(result.getInt("idCliente"));
@@ -71,5 +71,4 @@ public class daoContoImpl implements daoConto {
 		}
 		return list;
 	}
-
 }

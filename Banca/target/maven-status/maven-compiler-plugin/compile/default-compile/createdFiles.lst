@@ -1,5 +1,7 @@
 it\begear\Banca\dao\daoClienteImpl.class
+it\begear\Banca\dao\daoOperazioniImpl.class
 it\begear\Banca\dao\ConnectionManager.class
+it\begear\Banca\dao\daoOperazioni.class
 it\begear\Banca\entity\Conto.class
 it\begear\Banca\dao\daoCliente.class
 it\begear\Banca\dao\daoConto.class

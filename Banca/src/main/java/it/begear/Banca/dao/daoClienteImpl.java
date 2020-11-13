@@ -3,8 +3,11 @@ package it.begear.Banca.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import it.begear.Banca.entity.Cliente;
+import it.begear.Banca.entity.Persona;
 
 public class daoClienteImpl implements daoCliente {
 
@@ -41,5 +44,6 @@ public class daoClienteImpl implements daoCliente {
 		}
 		return cliente;
 	}
-
+	
+	
 }

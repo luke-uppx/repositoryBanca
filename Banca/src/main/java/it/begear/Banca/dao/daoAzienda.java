@@ -6,6 +6,6 @@ import it.begear.Banca.entity.Azienda;
 
 public interface daoAzienda {
 	public void createAzienda(Azienda azienda);
-	public Azienda readAzienda(int id);
+	public Azienda readAzienda(String pIVA);
 	public List<Azienda> readAllAzienda();
 }
