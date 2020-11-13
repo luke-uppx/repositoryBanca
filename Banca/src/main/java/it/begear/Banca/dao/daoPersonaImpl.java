@@ -57,7 +57,7 @@ public class daoPersonaImpl implements daoPersona {
 				persona.setCf(result.getString("cf"));
 				persona.setNome(result.getString("nome"));
 				persona.setCognome(result.getString("cognome"));
-				persona.setDataNascita(result.getString("data_Nascita"));
+				persona.setDataNascita(result.getString("dataNascita"));
 				persona.setIdCliente(result.getInt("idCliente"));
 				list.add(persona);
 			}
