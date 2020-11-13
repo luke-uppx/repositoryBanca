@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 import it.begear.Banca.entity.Conto;
 
-public class ContoDAOImpl implements daoConto {
+public class daoContoImpl implements daoConto {
 
-	private static ContoDAOImpl instance;
-	private ContoDAOImpl() {}
-	public static ContoDAOImpl getInstance() {
+	private static daoContoImpl instance;
+	private daoContoImpl() {}
+	public static daoContoImpl getInstance() {
 		if (instance == null)
-			instance = new ContoDAOImpl();
+			instance = new daoContoImpl();
 		return instance;
 	}
 
