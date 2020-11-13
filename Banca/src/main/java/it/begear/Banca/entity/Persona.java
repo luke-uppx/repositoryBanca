@@ -2,30 +2,28 @@ package it.begear.Banca.entity;
 
 public class Persona {
 	
-	
 	private String cf;
 	private String nome;
 	private String cognome;
-	private int idCliente;
 	private String dataNascita;
-	
+	private int idCliente;
 	
 	public Persona() {}
 
-	public Persona(String cf, String nome, String cognome, int idCliente, String dataNascita ) {
-		super();
-		this.cf = cf;
-		this.nome = nome;
-		this.cognome = cognome;
-		this.idCliente = idCliente;
-		this.dataNascita=dataNascita;
-	}
-	
 	public Persona(String cf, String nome, String cognome, String dataNascita ) {
 		super();
 		this.cf = cf;
 		this.nome = nome;
 		this.cognome = cognome;
+		this.dataNascita=dataNascita;
+	}
+	
+	public Persona(String cf, String nome, String cognome, String dataNascita, int idCliente) {
+		super();
+		this.cf = cf;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.idCliente = idCliente;
 		this.dataNascita=dataNascita;
 	}
 

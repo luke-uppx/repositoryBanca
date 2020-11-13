@@ -5,14 +5,7 @@ import java.util.List;
 import it.begear.Banca.entity.Persona;
 
 public interface daoPersona {
-
-	
-	void createPersona(Persona persona);
-	
-	List<Persona> readAllPersona();
-	
-	Persona readPersona(String cf);
-	
-	
-	
+	public void createPersona(Persona persona);
+	public List<Persona> readAllPersona();
+	public Persona readPersona(String cf);
 }

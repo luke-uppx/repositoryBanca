@@ -1,12 +1,20 @@
 package it.begear.Banca.entity;
 
-public class Azienda extends Cliente{
+public class Azienda {
 	
 	private String pIVA;
 	private String ragioneSociale;
 	private int idCliente;
 	
-	
+	public Azienda() {}
+
+	public Azienda(String pIVA, String ragioneSociale, int idCliente) {
+		super();
+		this.pIVA = pIVA;
+		this.ragioneSociale = ragioneSociale;
+		this.idCliente = idCliente;
+	}
+
 	public String getpIVA() {
 		return pIVA;
 	}
@@ -26,7 +34,6 @@ public class Azienda extends Cliente{
 		this.ragioneSociale = ragioneSociale;
 	}
 
-
 	public int getidCliente() {
 		return idCliente;
 	}
@@ -35,7 +42,6 @@ public class Azienda extends Cliente{
 	public void setidCliente(int idCliente) {
 		this.idCliente = idCliente;
 	}
-
 
 	@Override
 	public String toString() {

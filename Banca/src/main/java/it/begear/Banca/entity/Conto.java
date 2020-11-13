@@ -1,10 +1,20 @@
 package it.begear.Banca.entity;
 
 public class Conto {
+	
 	private int idConto;
 	private String dataApertura;
 	private int saldo;
+	private int idCliente;
 
+	public Conto() {}
+
+	public Conto(String dataApertura, int saldo, int idCliente) {
+		this.dataApertura = dataApertura;
+		this.saldo = saldo;
+		this.idCliente = idCliente;
+	}
+	
 	public int getIdConto() {
 		return idConto;
 	}
@@ -29,18 +39,18 @@ public class Conto {
 		this.saldo = saldo;
 	}
 
+	public int getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
+	}
+
 	@Override
 	public String toString() {
 		return "Conto [idConto=" + idConto + ", dataApertura=" + dataApertura + ", saldo=" + saldo + "]";
 	}
 
-	public Conto(int idConto, String dataApertura, int saldo) {
-		this.idConto = idConto;
-		this.dataApertura = dataApertura;
-		this.saldo = saldo;
-	}
-
-	public Conto() {
-	}
 
 }

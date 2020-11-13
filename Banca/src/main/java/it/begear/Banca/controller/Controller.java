@@ -1,12 +1,8 @@
 package it.begear.Banca.controller;
 
-import it.begear.Banca.dao.daoAzienda;
-import it.begear.Banca.dao.daoAziendaImpl;
-import it.begear.Banca.dao.daoConto;
-import it.begear.Banca.dao.daoContoImpl;
-import it.begear.Banca.dao.daoPersona;
-import it.begear.Banca.dao.daoPersonaImpl;
-import it.begear.Banca.entity.Persona;
+import java.util.List;
+import it.begear.Banca.dao.*;
+import it.begear.Banca.entity.*;
 
 public class Controller {
 
@@ -15,33 +11,47 @@ public class Controller {
 		daoConto daoConto = daoContoImpl.getInstance();
 		daoPersona daoPersona = daoPersonaImpl.getInstance();
 		daoAzienda daoAzienda = daoAziendaImpl.getInstance();
-
+		
 		
 		Persona persona;
-		
-		persona = new Persona("AAAAAAAAAAAAAAAA","Mario","Rossi",1,"01/01/1990");
-		//daoPersona.createPersona(persona);
-		System.out.println("CREATO");
-		persona = daoPersona.readPersona(persona.getCf());
-		System.out.println(persona);
-		
-		/*('AAAAAAAAAAAAAAAB','Guido','Bianchi',STR_TO_DATE("01/01/1993","%d/%m/%Y")),
-		('AAAAAAAAAAAAAAAC','Luigi','Verdi',STR_TO_DATE("01/01/1994","%d/%m/%Y")),
-		('AAAAAAAAAAAAAAAD','Saverio','Gialli',STR_TO_DATE("01/01/1997","%d/%m/%Y")),
-		('AAAAAAAAAAAAAAAE','Giacomo','Bruni',STR_TO_DATE("01/01/1998","%d/%m/%Y"));
-		Persona persona = new Persona("AAAa", "gigi", "orefice","vfsd");
+		persona = new Persona("AAAAAAAAAAAAAAAA","Mario","Rossi","01/01/1990");
 		daoPersona.createPersona(persona);
+		persona = new Persona("AAAAAAAAAAAAAAAB","Guido","Bianchi","01/01/1993");
+		daoPersona.createPersona(persona);
+		persona = new Persona("AAAAAAAAAAAAAAAC","Luigi","Verdi","01/01/1994");
+		daoPersona.createPersona(persona);
+		persona = new Persona("AAAAAAAAAAAAAAAD","Saverio","Gialli","01/01/1997");
+		daoPersona.createPersona(persona);
+		persona = new Persona("AAAAAAAAAAAAAAAE","Giacomo","Bruni","01/01/1998");
+		daoPersona.createPersona(persona);
+		
+		List<Persona> listP = daoPersona.readAllPersona();
+		
+		
+		Conto conto;
+		conto = new Conto("01/01/2010",10999, listP.get(0).getIdCliente());
+		daoConto.createConto(conto);
+		conto = new Conto("01/01/2011",300, listP.get(1).getIdCliente());
+		daoConto.createConto(conto);
+		conto = new Conto("22/02/2000",1200, listP.get(2).getIdCliente());
+		daoConto.createConto(conto);
+		conto = new Conto("22/03/2001",1100, listP.get(3).getIdCliente());
+		daoConto.createConto(conto);
+		conto = new Conto("22/04/2002",1000, listP.get(4).getIdCliente());
+		daoConto.createConto(conto);
+		
+		
 
+		
+		
 
-		//variabili di appoggio
+		/*//variabili di appoggio
 		Conto conto;
 		Azienda azienda;
 		String cf, pIVA;
 		int scelta, idConto, idCliente;
 
-		//menu
 		while(true) {
-
 			System.out.print("**MENU**\n"
 					+ "1)Aprire un conto corrente fisico o sociale\n"
 					+ "2)Depositare denaro per un cliente fisico o sociale\n"
@@ -88,7 +98,7 @@ public class Controller {
 
 
 				break;
-				
+
 			case 7:
 				System.exit(0);
 

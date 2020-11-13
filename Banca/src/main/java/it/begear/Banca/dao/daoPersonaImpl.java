@@ -6,16 +6,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.begear.Banca.entity.Cliente;
 import it.begear.Banca.entity.Persona;
 
 public class daoPersonaImpl implements daoPersona {
-	// esempio del pattern singleton
+	
 	private static daoPersonaImpl instance = null;
 
-	// costruttore
-	private daoPersonaImpl() {
-		// TODO Auto-generated constructor stub
-	}
+	private daoPersonaImpl() {}
 
 	public static daoPersonaImpl getInstance() {
 		if (instance == null) {
@@ -24,22 +22,30 @@ public class daoPersonaImpl implements daoPersona {
 		return instance;
 	}
 
+	@Override
 	public void createPersona(Persona persona) {
-		String sql = "INSERT INTO persona(cf,nome,cognome,idCliente,dataNascita) VALUES (?,?,?,?,?)";
-
+		
+		daoCliente daoCliente = daoClienteImpl.getInstance();
+		daoCliente.createCliente();
+		Cliente cliente = daoCliente.readLastCliente();
+		
+		String sql = "INSERT INTO persona(cf,nome,cognome,dataNascita,idCliente) VALUES (?,?,?,?,?)";
+		
 		try (PreparedStatement stm = ConnectionManager.getConnection().prepareStatement(sql)) {
-
+			
 			stm.setString(1, persona.getCf());
 			stm.setString(2, persona.getNome());
 			stm.setString(3, persona.getCognome());
-			stm.setInt(4, persona.getIdCliente());
-			stm.setString(5, persona.getDataNascita());
+			stm.setString(4, persona.getDataNascita());
+			stm.setInt(5, cliente.getIdCliente());
 			stm.execute();
-		} catch (Exception e) {
+			
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
+	@Override
 	public List<Persona> readAllPersona() {
 		String sql = "SELECT * FROM persona";
 		List<Persona> list = null;
@@ -51,8 +57,8 @@ public class daoPersonaImpl implements daoPersona {
 				persona.setCf(result.getString("cf"));
 				persona.setNome(result.getString("nome"));
 				persona.setCognome(result.getString("cognome"));
-				persona.setIdCliente(result.getInt("idCliente"));
 				persona.setDataNascita(result.getString("data_Nascita"));
+				persona.setIdCliente(result.getInt("idCliente"));
 				list.add(persona);
 			}
 
@@ -76,8 +82,8 @@ public class daoPersonaImpl implements daoPersona {
 				persona.setCf(result.getString("cf"));
 				persona.setNome(result.getString("nome"));
 				persona.setCognome(result.getString("cognome"));
-				persona.setIdCliente(result.getInt("idCliente"));
 				persona.setDataNascita(result.getString("dataNascita"));
+				persona.setIdCliente(result.getInt("idCliente"));
 
 			}
 		} catch (Exception e) {
